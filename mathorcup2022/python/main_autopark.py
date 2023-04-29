@@ -89,7 +89,6 @@ if __name__ == '__main__':
     ################################## control ##################################################
     print('driving to destination ...')
     for i, point in enumerate(final_path):
-
         acc, delta = controller.optimize(my_car, final_path[i:i + MPC_HORIZON])
         my_car.update_state(my_car.move(acc, delta))
         res = env.render(my_car.x, my_car.y, my_car.psi, delta)
